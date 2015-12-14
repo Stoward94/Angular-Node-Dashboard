@@ -94,12 +94,6 @@
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -121,7 +115,6 @@
     <None Include="Scripts\_references.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\socket.io.js" />
-    <Content Include="user.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

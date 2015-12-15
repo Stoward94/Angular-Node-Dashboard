@@ -11,7 +11,6 @@
         }
 
         var onReposComplete = function (data) {
-            console.log(data);
             $scope.userRepos = data;
         }
         

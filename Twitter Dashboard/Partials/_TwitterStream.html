@@ -1,34 +1,50 @@
 ﻿<div ng-controller="TwitterStreamController">
+    <div class="col-sm-8">
 
-    <button class="btn btn-default" ng-click="stream()" ng-hide="active" style="margin-bottom: 10px;">{{btnText}}</button>
-    
-    <div class="panel panel-twitter">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <i class="fa fa-twitter"></i> Twitter Stream (Github)
-                <i class="fa fa-spinner fa-pulse" ng-show="active"></i>
-            </h3>
-        </div>
-        <div class="panel-body">
 
-            <div id="twitter-stream" class="twitter-stream">
-                <!-- List Tweets -->
-                <div class="row tweet" ng-repeat="tweet in tweets">
-                    <div class="col-sm-1 tweet-image">
-                        <img ng-src="{{tweet.user.image}}" width="50" height="50"/>
-                    </div>
-                    <div class="col-sm-11">
-                        <p class="tweet-name">{{tweet.user.name}}</p>
-                        <p>{{tweet.text}}</p>
+        <button class="btn btn-default" ng-click="stream()" ng-hide="active" style="margin-bottom: 10px;">{{btnText}}</button>
 
-                        <div >
-                            <span ng-repeat="hashtag in tweet.hashtags">#{{hashtag.text}} </span>
+        <div class="panel panel-twitter">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-twitter"></i> Twitter Stream (Github)
+                    <i class="fa fa-spinner fa-pulse" ng-show="active"></i>
+                </h3>
+            </div>
+            <div class="panel-body">
+
+                <div id="twitter-stream" class="twitter-stream">
+                    <!-- List Tweets -->
+                    <div class="row tweet" ng-repeat="tweet in tweets">
+                        <div class="col-sm-1 tweet-image">
+                            <img ng-src="{{tweet.user.image}}" width="50" height="50"/>
                         </div>
+                        <div class="col-sm-11">
+                            <p class="tweet-name">{{tweet.user.name}}</p>
+                            <p>{{tweet.text}}</p>
 
+                            <div>
+                                <span ng-repeat="hashtag in tweet.hashtags">#{{hashtag.text}} </span>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="panel panel-twitter">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-pie-chart"></i> Trending (UK)
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div id="trending-chart" style="height: 250px;"></div>
+            </div>
         </div>
     </div>
 </div>

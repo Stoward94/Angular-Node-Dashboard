@@ -9,9 +9,8 @@
             .when("/", {
                 templateUrl: "main.html"
             })
-            .when("/user/:username", {
-                templateUrl: "user.html",
-                controller: "UserController"
+            .when("/repo/:username/:reponame", {
+                templateUrl: "repoDetails.html"
             })
             .otherwise({ redirectTo: "/main" });
 

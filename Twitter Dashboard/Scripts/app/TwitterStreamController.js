@@ -29,6 +29,20 @@
             nodeService.closeStream();
         };
 
+        var getTrendingTweets = function (data) {
+            //Graph initialisation
+            Morris.Donut({
+                element: "trending-chart",
+                data: data
+            });
+        };
+
+        var onBadError = function(detail) {
+            alert(detail.text);
+        };
+
+        //Fetch trending keywords
+        nodeService.getTwitterTrends(getTrendingTweets);
 
         //$scope members
         $scope.tweets = [];

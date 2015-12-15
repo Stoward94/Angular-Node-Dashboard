@@ -22,28 +22,24 @@
             socket = null;
         }
 
-        var getUser = function (username) {
+        var getTwitterTrends = function(callback) {
 
-            return $http.get("https://api.github.com/users/" + username)
-                .then(function (response) {
-                    return response.data;
+            $.ajax({
+                url: "http://localhost:3000/twitter/trending",
+                dataType: "jsonp",
+                crossDomain: true
+            }).success(function (data) {
+                    callback(data);
+            })
+            .error(function (responseData, textStatus, errorThrown) {
+                    alert("error");
                 });
-        };
-
-        var getRepos = function (user) {
-
-            return $http.get(user.repos_url)
-                .then(function (response) {
-                    return response.data;
-                });
-        };
-
-
+        }
+        
         return {
             twitterStream: twitterStream,
             closeStream: closeStream,
-            getUser: getUser,
-            getRepos: getRepos
+            getTwitterTrends: getTwitterTrends
         };
     };
 

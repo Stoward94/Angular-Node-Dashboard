@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-sm-10 col-sm-offset-2 main">
                     <!-- Insertion point for views -->
-                    <div ng-view></div>
+                    <div ui-view></div>
                 </div>
             </div>
         </div>
@@ -68,7 +68,8 @@
 
     <!-- Scripts -->
     <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
     <script src="Scripts/jquery-2.1.4.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/socket.io.js"></script>
@@ -78,6 +79,7 @@
     <script src="Scripts/app/app.js"></script>
     <script src="Scripts/app/TwitterStreamController.js"></script>
     <script src="Scripts/app/TopReposController.js"></script>
+    <script src="Scripts/app/RepoDetailsController.js"></script>
 
     <script src="Scripts/app/nodeService.js"></script>
     <script src="Scripts/app/githubService.js"></script>

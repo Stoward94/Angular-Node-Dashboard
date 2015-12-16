@@ -1,0 +1,89 @@
+﻿
+
+<div class="container-fluid">
+    <a href="\">Return</a>
+    <!-- User Details -->
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="{{repo.owner.html_url}}" target="_blank">{{repo.owner.login}} <i style="font-size: 12px;" class="fa fa-external-link"></i></a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-sm-2">
+                        <img ng-src="{{repo.owner.avatar_url}}" width="150" height="150" />
+                    </div>
+                    <div class="col-sm-7">
+                        <h2 style="margin-top: 0;">{{repo.name}}</h2>
+                        <p>{{repo.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Repository Statistics</h3>
+                </div>
+                <div class="panel-body" style="height: 180px;">
+                    <p>
+                        <i class="fa fa-star"></i> {{repo.stargazers_count}} Stars
+                    </p>
+                    <p>
+                        <i class="fa fa-code-fork"></i> {{repo.forks_count}} Forks
+                    </p>
+                    <p>
+                        <i class="fa fa-eye"></i> {{repo.watchers_count}} Watchers
+                    </p>
+                    <p>
+                        <i class="fa fa-exclamation-circle"></i> {{repo.open_issues_count}} Open Issues
+                    </p>
+                    <p>
+                        <i class="fa fa-users"></i> {{repo.subscribers_count}} Subscribers
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repo Details -->
+    <div class="row">
+
+        <!-- Commit History -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Commit History ({{repo.commits.length}})</h3>
+                </div>
+                <div class="panel-body commits-panel">
+                    <div class="commit" ng-repeat="commit in repo.commits">
+                        <div class="row commit-item">
+                            <div class="col-sm-3" style="text-align: center;">
+                                <img ng-src="{{commit.author.avatar_url}}" width="50" height="50"/>
+                                <div>{{commit.commit.author.name}}</div>
+                            </div>
+                            <div class="col-sm-9">
+                                <p style="color: #8a8a8a; text-align: right"><i class="fa fa-clock-o"></i> {{commit.commit.author.date}}
+                                </p>
+                                <p><i class="fa fa-quote-left" style="font-size: 8px; vertical-align: 5px;"></i> {{commit.commit.message}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Languages</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="languages-bar-chart"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

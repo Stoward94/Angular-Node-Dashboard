@@ -48,12 +48,16 @@ border-right: 1px solid #eee;
     width: 40%;
 }
 
-.twitter-stream {
+.twitter-stream, .commits-panel {
     height: 300px;
     overflow-x: hidden;
 }
 
-.tweet {
+.commits-panel {
+    height: 378px;
+}
+
+.tweet, .commit-item {
     border-bottom: 1px solid #eee;
     padding: 10px 0 0;
 }
@@ -70,4 +74,8 @@ border-right: 1px solid #eee;
 .section {
     margin-bottom: 40px;
     border-bottom: 1px solid #eee;
+}
+
+.commit-item {
+    min-height: 75px;
 }

@@ -38,7 +38,7 @@
         };
 
         var onBadError = function(detail) {
-            alert(detail.text);
+            console.log(detail.text);
         };
 
         //Fetch trending keywords

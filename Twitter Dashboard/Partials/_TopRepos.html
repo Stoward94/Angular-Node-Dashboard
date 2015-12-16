@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="panel-footer">
-                    <a href="/repo/{{repo.full_name}}">More Details</a>
+                    <a ui-sref="RepoDetails({ username: repo.owner.login, reponame: repo.name })">More details</a>
                 </div>
 
             </div>

@@ -32,7 +32,7 @@
                     callback(data);
             })
             .error(function (responseData, textStatus, errorThrown) {
-                    alert("error");
+                    console.log("error");
                 });
         }
         

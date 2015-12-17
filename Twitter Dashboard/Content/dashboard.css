@@ -68,7 +68,7 @@ border-right: 1px solid #eee;
 
 .repo-item {
     height: 200px;
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .section {
@@ -83,4 +83,8 @@ border-right: 1px solid #eee;
 .panel-medium {
     height: 600px;
     padding: 0 15px;
+}
+
+.page-header {
+    margin-top: 0;
 }

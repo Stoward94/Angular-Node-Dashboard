@@ -1,6 +1,11 @@
 ﻿
 
 <div class="container-fluid">
+
+    <div class="page-header">
+        <h1>Repository Details <small>{{repo.name}}</small></h1>
+    </div>
+
     <div class="row">
         <div class="col-md-12" style="margin-bottom: 20px;">
             <a class="btn btn-default" href="/"><i class="fa fa-home"></i> Home </a>
@@ -16,7 +21,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="col-sm-2">
-                        <img ng-src="{{repo.owner.avatar_url}}" width="150" height="150" />
+                        <img ng-src="{{repo.owner.avatar_url}}" width="150" height="150"/>
                     </div>
                     <div class="col-sm-7">
                         <h2 style="margin-top: 0;">{{repo.name}}</h2>
@@ -28,7 +33,8 @@
         <div class="col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-line-chart"></i> Repository Statistics</h3>
+                    <h3 class="panel-title"><i class="fa fa-line-chart"></i> Repository Statistics
+                    </h3>
                 </div>
                 <div class="panel-body" style="height: 180px;">
                     <p>
@@ -60,13 +66,14 @@
         <div class="col-sm-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-commenting"></i> Commit History ({{repo.commits.length}})</h3>
+                    <h3 class="panel-title"><i class="fa fa-commenting"></i> Commit History ({{repo.commits.length}})
+                    </h3>
                 </div>
                 <div class="panel-body commits-panel">
                     <div class="commit" ng-repeat="commit in repo.commits">
                         <div class="row commit-item">
                             <div class="col-sm-3" style="text-align: center;">
-                                <img ng-src="{{commit.author.avatar_url}}" width="50" height="50" />
+                                <img ng-src="{{commit.author.avatar_url}}" width="50" height="50"/>
                                 <div>{{commit.commit.author.name}}</div>
                             </div>
                             <div class="col-sm-9">
@@ -86,7 +93,8 @@
         <div class="col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-code"></i> Languages</h3>
+                    <h3 class="panel-title"><i class="fa fa-code"></i> Languages
+                    </h3>
                 </div>
                 <div class="panel-body">
                     <div id="languages-bar-chart"></div>

@@ -5,7 +5,7 @@
     var github = function($http){
       
       var getUser = function(username){
-            return $http.get("https://api.github.com/users/" + username)
+            return $http.get("https://api.github.com/users/" + username + oAuth)
                         .then(function(response){
                            return response.data; 
                         });

@@ -13,6 +13,16 @@
         //Process Repo Stargazers data
         var onStargazers = function (data) {
             $scope.stargazers = data;
+            $scope.stargazers.users = [];
+
+            for (var i = 0; i < $scope.stargazers.length; i++) {
+
+                if ($scope.stargazers[i] == undefined) continue;
+
+                $github.getUser($scope.stargazers[i].login).then(function (d) {
+                    $scope.stargazers.users.push(d);
+                }, onError);
+            };
         };
 
         //Process Repo Subscribers data

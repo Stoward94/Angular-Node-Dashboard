@@ -1,6 +1,11 @@
 ﻿
 
 <div class="container-fluid">
+
+    <div class="page-header">
+        <h1>Repository Statistics <small>{{reponame}}</small></h1>
+    </div>
+
     <div class="row">
         <div class="col-md-12" style="margin-bottom: 20px;">
             <a class="btn btn-default" onclick="history.back()"><i class="fa fa-list-ul"></i> Full Details </a>
@@ -15,13 +20,18 @@
                     </h3>
                 </div>
                 <div class="panel-body panel-medium">
-                    <div class="commit" ng-repeat="star in stargazers">
-                        <div class="row commit-item">
-                            <div class="col-sm-12" style="text-align: center;">
-                                <img ng-src="{{star.avatar_url}}" class="img-thumbnail" width="100" height="100" />
-                                <div>
-                                    <a href="{{star.html_url}}" target="_blank">{{star.login}}</a>
-                                </div>
+                    <div class="commit" ng-repeat="user in stargazers.users">
+                        <div class="row commit-item" style="padding-bottom: 5px;">
+                            <div class="col-sm-4" style="text-align: center;">
+                                <img ng-src="{{user.avatar_url}}" class="img-thumbnail" width="100" height="100"/>
+                            </div>
+                            <div class="col-sm-8">
+                                <h4 style="margin: 0"><a href="{{user.html_url}}" target="_blank">{{user.login}}</a></h4>
+                                <span ng-show="{{user.location}}">Location: {{user.location}}</span>
+                                <span ng-show="{{user.email}}">Email: {{user.email}}</span>
+                                <span>Followers: {{user.followers}}</span>
+                                <span>Following: {{user.following}}</span>
+
                             </div>
                         </div>
                     </div>
@@ -42,7 +52,7 @@
                     <div class="commit" ng-repeat="sub in subscribers">
                         <div class="row commit-item">
                             <div class="col-sm-12" style="text-align: center;">
-                                <img ng-src="{{sub.avatar_url}}" class="img-thumbnail" width="100" height="100" />
+                                <img ng-src="{{sub.avatar_url}}" class="img-thumbnail" width="100" height="100"/>
                                 <div>
                                     <a href="{{sub.html_url}}" target="_blank">{{sub.login}}</a>
                                 </div>
@@ -87,8 +97,10 @@
                     <div class="commit" ng-repeat="issue in issues">
                         <div class="row commit-item">
                             <div class="col-sm-12">
-                                <h3><a href="{{issue.html_url}}">Issue #{{issue.number}} | {{issue.title}}</a></h3>
-                                <p>Status: <b>{{issue.state | uppercase}}</b></p>
+                                <h3><a href="{{issue.html_url}}">Issue #{{issue.number}} | {{issue.title}}</a>
+                                </h3>
+                                <p>Status: <b>{{issue.state | uppercase}}</b>
+                                </p>
                                 <p>Description: {{issue.body}}</p>
                             </div>
                         </div>

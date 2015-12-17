@@ -1,40 +1,27 @@
 ﻿(function () {
 
     //Create our angular module (with dependencies)
-    //var app = angular.module("twitterDashboard", ["ngRoute"]);
-
-    //var version = "?v1.0";
-
-    ////Configure routing
-    //app.config(function($routeProvider, $locationProvider) {
-    //    $routeProvider
-    //        .when("/", {
-    //            templateUrl: "main.html?" + version
-    //        })
-    //        .when("/repo/:username/:reponame", {
-    //            templateUrl: "repoDetails.html" + version,
-    //            controller: "RepoDetailsController"
-    //        })
-    //        .otherwise({ redirectTo: "/" });
-
-    //    $locationProvider.html5Mode(true);
-    //});
-
     var app = angular.module("twitterDashboard", ["ui.router"]);
 
 
-    app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    app.config(function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-          .state('Home', {
-              url: "/",
-              templateUrl: "main.html"
-          })
-          .state('RepoDetails', {
-              url: "/repo/{username}/{reponame}",
-              templateUrl: "repoDetails.html",
-              controller: 'RepoDetailsController'
-          });
+            .state("Home", {
+                url: "/",
+                templateUrl: "Views/main.html"
+            })
+            .state("RepoDetails", {
+                url: "/repo/{username}/{reponame}",
+                templateUrl: "Views/repoDetails.html",
+                controller: "RepoDetailsController"
+            })
+            .state("RepoStatistics", {
+                url: "/repo/{username}/{reponame}/statistics",
+                templateUrl: "Views/repoStatistics.html",
+                controller: "RepoStatisticsController"
+            });
+
         $urlRouterProvider.otherwise("/");
     });
 }());

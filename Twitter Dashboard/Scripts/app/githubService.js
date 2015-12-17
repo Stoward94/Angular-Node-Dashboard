@@ -25,14 +25,6 @@
               .then(function(response) {
                   return response.data;
               });
-          //.then(function(response) {
-          //    repo.commits = response.data;
-          //    return $http.get(repo.languages_url + oAuth);
-          //})
-          //.then(function(response) {
-          //    repo.languages = response.data;
-          //    return repo;
-          //});
       };
 
         var getCommits = function(data) {
@@ -53,14 +45,62 @@
                 });
         };
 
+        var getStarGazers = function (url) {
+            var fullUrl = url + "/stargazers" + oAuth;
 
+            return $http.get(fullUrl)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
+        var getSubscribers = function (url) {
+            var fullUrl = url + "/subscribers" + oAuth;
+
+            return $http.get(fullUrl)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
+        var getBranches = function (url) {
+            var fullUrl = url + "/branches" + oAuth;
+
+            return $http.get(fullUrl)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
+        var getForks = function (url) {
+            var fullUrl = url + "/forks" + oAuth;
+
+            return $http.get(fullUrl)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
+        var getIssues = function (url) {
+            var fullUrl = url + "/issues" + oAuth;
+
+            return $http.get(fullUrl)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
 
         return {
           getUser: getUser,
           getRepos: getRepos,
           getRepoDetails: getRepoDetails,
           getCommits: getCommits,
-          getLanguages: getLanguages
+          getLanguages: getLanguages,
+          getStarGazers: getStarGazers,
+          getSubscribers: getSubscribers,
+          getBranches: getBranches,
+          getForks: getForks,
+          getIssues: getIssues
       };
         
     };
